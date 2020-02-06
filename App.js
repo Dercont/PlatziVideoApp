@@ -1,33 +1,18 @@
 import React, {Component} from 'react';
-import { StyleSheet, Text, View, Image, Platform } from 'react-native';
+import { Text } from 'react-native';
+import Home from './src/screens/containers/Home';
 
-export default class App extends Component{
+export default class App extends React.Component{
   render() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text> 
-    <Image 
-    style={{width: 50, height: 50}}
-    source={{uri:
-      'https://www.techpowerusa.com/wp-content/uploads/2017/06/default-user.png'}}
-    ></Image>
-     <Image 
-    style={{width: 300, height: 80}}
-    source={require('./assets/logo.png')}
-    ></Image>
-  </View>
-   );
-  }
+    <Home>
+      <Text>header</Text>
+      <Text>buscador</Text>
+      <Text>categorías</Text>
+      <Text>sugerencias</Text>
+    </Home>
+  );
+}
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: Platform.select({
-      android:'green',
-      ios:'blue',
-    })
-  },
-});
+
