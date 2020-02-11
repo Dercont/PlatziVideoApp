@@ -1,7 +1,8 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { Text } from 'react-native';
-import Home from './src/screens/containers/home';
+import Home from './src/screens/containers/Home';
 import Header from './src/sections/components/header'; 
+import SuggestionList from './src/video/containers/suggestion-list';
 
 export default class App extends React.Component{
   render() {
@@ -10,7 +11,7 @@ export default class App extends React.Component{
       <Header />
       <Text>buscador</Text>
       <Text>categorías</Text>
-      <Text>sugerencias</Text>
+      <SuggestionList />
     </Home>
   );
 }
