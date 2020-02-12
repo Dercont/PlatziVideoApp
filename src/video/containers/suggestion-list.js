@@ -1,21 +1,24 @@
 import React, {Component} from 'react';
 import {FlatList, Text} from 'react-native';
 import Layout from '../components/suggestion-list-layout';
+import Empty from '../components/empty';
+import Separator from '../components/vertical-separator';
 
 class SuggestionList extends Component {
+    renderEmpty = () => <Empty text="No hay sugerencias."/>
+    ItemSeparator = () => <Separator />
     render() {
         //array de objetos
         const list = [
-               
             {
-                title: 'Título',
-                key: '1'    
+               title: 'Avengers',
+               key: 1,
             },
-  
             {
-                title: 'Otro Título',
-                key: '2'
-            }
+                title: 'Pokemon',
+                key: 2,
+             },
+             
         ]
         return(
             <Layout
@@ -23,6 +26,8 @@ class SuggestionList extends Component {
             >
                 <FlatList
                 data={list}
+                ListEmptyComponent={this.renderEmpty}
+                ItemSeparatorComponent={this.ItemSeparator}
                 renderItem={({item}) => <Text>{item.title}</Text>}
             />
             </Layout>
